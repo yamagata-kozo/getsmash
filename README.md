@@ -41,4 +41,6 @@ $ git commit -m "コミットコメント"
 $ git push origin <トピックブランチ>
 ```
 
-githubでPull Requestボタンを押して```master``` <- ```<トピックブランチ名>```となるように作成
+githubでPull Requestボタンを押して
+```master``` <- ```<トピックブランチ名>```となるように作成
+タイトル(デフォルトは最後のコミットコメント)と説明を入力。
