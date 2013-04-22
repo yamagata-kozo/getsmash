@@ -8,16 +8,19 @@ Getsmash
 
 1. アプリケーションのcloneとgemのインストール
 
-    $ cd path/to/workspace  
-    $ git clone git@github.com:yamagata-kozo/getsmash.git  
-    $ cd getsmash  
-    $ bundle install --path vendor/bundle --without production  
-
+```shell
+$ cd path/to/workspace  
+$ git clone git@github.com:yamagata-kozo/getsmash.git  
+$ cd getsmash  
+$ bundle install --path vendor/bundle --without production  
+```
 
 2. DBのマイグレーションとサーバ起動
 
-    $ bundle exec rake db:migrate  
-    $ bundle exec rails server  
+```shell
+$ bundle exec rake db:migrate  
+$ bundle exec rails server  
+```
 
 
 開発の進め方
@@ -26,12 +29,16 @@ Getsmash
 
 1. トピックブランチの作成
 
-    $ git checkout -b <トピックブランチ>
+```shell
+$ git checkout -b <トピックブランチ>
+```
 
 2. 作業をコミットしてoriginにトピックブランチをpush
 
-    $ git add <ファイル名>
-    $ git commit -m "コミットコメント"
-    $ git push origin <トピックブランチ>
+```shell
+$ git add <ファイル名>
+$ git commit -m "コミットコメント"
+$ git push origin <トピックブランチ>
+```
 
 3. githubでPull Requestを作成
