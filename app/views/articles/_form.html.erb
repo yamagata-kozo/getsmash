@@ -1,0 +1,12 @@
+<%= form_for @article do |f| %>
+  <div>
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title, { placeholder: 'タイトルを入力' } %>
+  </div>
+  <div>
+    <%= f.text_area :body, { placeholder: '文章を入力' } %>
+  </div>
+  <div>
+    <%= f.submit '作成' %>
+  </div>
+<% end %>

@@ -1,2 +1,9 @@
 <%= @article.title %>
 <%= link_to 'Back index', articles_path %>
+<p>
+  <%= link_to '編集', edit_article_path(@article) %>
+</p>
+<p>
+<%= link_to '削除', @article,
+      data: { method: 'delete', confirm: '本当に削除しますか？' } %>
+</p>
