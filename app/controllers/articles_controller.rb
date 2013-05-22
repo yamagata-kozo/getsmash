@@ -14,10 +14,10 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
-    if false
+    if @article.save
       redirect_to @article, notice: '新しいarticleを作成しました'
     else
-      flash[:alert] = 'articleを作成出来ませんでした'
+      flash[:alert] = t('flash_messages.article.create_error')
       render :new
     end
   end

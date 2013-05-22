@@ -1,7 +1,16 @@
 <%= form_for @article do |f| %>
+  <% if @article.errors.any? %>
+    <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div>
     <%= f.label :title, 'タイトル' %>
     <%= f.text_field :title, { placeholder: 'タイトルを入力' } %>
+    <%= @article.errors.full_message(:title, t('errors.messages.blank')) %>
   </div>
   <div>
     <%= f.text_area :body, { placeholder: '文章を入力' } %>
