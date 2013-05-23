@@ -6,3 +6,11 @@ if Article.count == 0
     })
   end
 end
+
+if Category.count == 0
+  10.times do |n|
+    Category.create({
+      name: "sample category #{ n }"
+    })
+  end
+end

@@ -1,15 +1,16 @@
 # coding: utf-8
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.includes(:category).all
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.joins(:category).find(params[:id])
   end
 
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   def create
@@ -17,6 +18,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article, notice: '新しいarticleを作成しました'
     else
+      @categories = Category.all
       flash[:alert] = t('flash_messages.article.create_error')
       render :new
     end
@@ -24,6 +26,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -31,6 +34,7 @@ class ArticlesController < ApplicationController
     if @article.update_attributes(params[:article])
       redirect_to @article, notice: '更新しました'
     else
+      @categories = Category.all
       flash[:alert] = '更新出来ませんでした'
       render :edit
     end

@@ -16,6 +16,9 @@
     <%= f.text_area :body, { placeholder: '文章を入力' } %>
   </div>
   <div>
+    <%= f.collection_select :category_id, @categories, :id, :name, prompt: 'カテゴリーを選択' %>
+  </div>
+  <div>
     <%= f.submit @article.persisted? ? '更新' : '作成' %>
   </div>
 <% end %>

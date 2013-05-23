@@ -1,4 +1,7 @@
 <%= @article.title %>
+
+<p>カテゴリー:<%= @article.category.name %></p>
+
 <%= link_to 'Back index', articles_path %>
 <p>
   <%= link_to '編集', edit_article_path(@article) %>
